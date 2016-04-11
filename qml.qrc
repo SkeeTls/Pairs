@@ -7,5 +7,6 @@
         <file>smeshariki/3.png</file>
         <file>smeshariki/4.png</file>
         <file>smeshariki/5.png</file>
+        <file>CellItem.qml</file>
     </qresource>
 </RCC>
