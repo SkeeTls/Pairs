@@ -1,5 +1,11 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>smeshariki/0.png</file>
+        <file>smeshariki/1.png</file>
+        <file>smeshariki/2.png</file>
+        <file>smeshariki/3.png</file>
+        <file>smeshariki/4.png</file>
+        <file>smeshariki/5.png</file>
     </qresource>
 </RCC>

@@ -7,7 +7,6 @@ Window {
     visible: true
     width: 800
     height: 600
-
     Field {
         id: field
     }
@@ -31,6 +30,20 @@ Window {
                     id: cellItem
                     width: 48
                     height: 32
+                    property Cell cell: field.cellAt(index % field.width, index / field.width)
+
+                    Text {
+                        anchors.centerIn: parent
+                        text: cell.key
+                    }
+                    Image{
+                        anchors.centerIn: parent
+                        width:40
+                        height:40
+                        id:image5
+                        source: "qrc:///smeshariki/" + cell.key + ".png"
+                    }
+
                 }
             }
         }
