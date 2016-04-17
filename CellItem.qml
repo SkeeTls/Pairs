@@ -5,8 +5,8 @@ import Pairs 1.0
 
 Rectangle {
     id: cellItem
-    width: 48
-    height: 32
+    width: 40
+    height: 40
     property Cell cell: field.cellAt(index % field.width, index / field.width)
     
     Flipable {
