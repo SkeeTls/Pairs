@@ -26,6 +26,7 @@ signals:
 public slots:
     void setWidth(int width);
     void setHeight(int height);
+    void onCellOpened();
 
 private:
     void applySize();

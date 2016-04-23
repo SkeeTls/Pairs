@@ -61,6 +61,7 @@ void Field::applySize()
         for (int x = 0; x < width(); ++x) {
             Cell *cell = new Cell(this);
             cell->setKey(qrand() % 6);
+            connect (cell, SIGNAL(cellOpened(Cell*)), this, SLOT(onCellOpened(Cell*)));
             m_cells.append(cell);
         }
     }
