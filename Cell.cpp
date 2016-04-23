@@ -17,12 +17,12 @@ void Cell::setKey(int key)
     emit keyChanged(key);
 }
 
-void Cell::setOpen(bool open)
+void Cell::open()
 {
-    if (m_open == open){
+    if (m_open == true){
         return;
     }
 
-    m_open = open;
-    emit openChanged(open);
+    m_open = true;
+    emit isOpenChanged(true);
 }

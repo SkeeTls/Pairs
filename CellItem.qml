@@ -8,6 +8,7 @@ Rectangle {
     width: 40
     height: 40
     property Cell cell: field.cellAt(index % field.width, index / field.width)
+    property bool flipped: cell.isOpen
     
     Flipable {
         anchors.fill:parent
@@ -32,7 +33,7 @@ Rectangle {
             origin.x: cellItem.width / 2
             origin.y: cellItem.height / 2
 
-            angle : cellItem.cell.open ? 180 : 0
+            angle : cellItem.flipped ? 180 : 0
 
             Behavior on angle {
                 NumberAnimation {
@@ -44,6 +45,6 @@ Rectangle {
 
     MouseArea {
         anchors.fill:parent
-        onClicked: cellItem.cell.open = true
+        onClicked: cell.open()
     }
 }
