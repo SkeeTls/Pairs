@@ -18,6 +18,7 @@ public:
 signals:
     void keyChanged(int key);
     void isOpenChanged (bool open);
+    void cellOpened(Cell *cell);
 
 public slots:
    void open();

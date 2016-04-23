@@ -25,4 +25,5 @@ void Cell::open()
 
     m_open = true;
     emit isOpenChanged(true);
+    emit cellOpened(this);
 }
