@@ -26,12 +26,14 @@ signals:
 public slots:
     void setWidth(int width);
     void setHeight(int height);
-    void onCellOpened();
+    void onCellOpened(Cell *cell);
 
 private:
     void applySize();
 
     QVector<Cell*> m_cells;
+    Cell *m_firstCell;
+    Cell *m_secondCell;
 
     int m_width;
     int m_height;
