@@ -49,6 +49,11 @@ void Field::setHeight(int height)
     emit heightChanged(height);
 }
 
+void Field::closeCells()
+{
+
+}
+
 void Field::applySize()
 {
     for (Cell *cell : m_cells) {

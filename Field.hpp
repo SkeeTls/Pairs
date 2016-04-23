@@ -27,6 +27,7 @@ public slots:
     void setWidth(int width);
     void setHeight(int height);
     void onCellOpened(Cell *cell);
+    void closeCells();
 
 private:
     void applySize();
