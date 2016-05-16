@@ -22,6 +22,7 @@ signals:
 
 public slots:
    void open();
+   void close();
 
 private:
     int m_key;

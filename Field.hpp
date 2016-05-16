@@ -29,6 +29,7 @@ public slots:
     void onCellOpened(Cell *cell);
     void closeCells();
 
+
 private:
     void applySize();
 
@@ -38,6 +39,10 @@ private:
 
     int m_width;
     int m_height;
+    int count;
+    int fcell;
+    int scell;
+    int arr[2] = {};
 
 };
 

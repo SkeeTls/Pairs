@@ -27,3 +27,15 @@ void Cell::open()
     emit isOpenChanged(true);
     emit cellOpened(this);
 }
+
+void Cell::close()
+{
+    if (m_open == false){
+        return;
+    }
+
+    m_open = false;
+    emit isOpenChanged(false);
+//    emit cellOpened(this);
+}
+

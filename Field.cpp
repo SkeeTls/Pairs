@@ -2,10 +2,17 @@
 
 #include "Cell.hpp"
 
+#include <QDebug>
+
 Field::Field(QObject *parent) :
     QObject(parent),
     m_width(10),
-    m_height(10)
+    m_height(10),
+    count(1),
+    m_firstCell(nullptr),
+    m_secondCell(nullptr),
+    fcell(-1),
+    scell(-1)
 {
     applySize();
 }
@@ -49,10 +56,40 @@ void Field::setHeight(int height)
     emit heightChanged(height);
 }
 
+void Field::onCellOpened(Cell *cell)
+{
+    if (m_firstCell == nullptr) {
+        m_firstCell = cell;
+        fcell = cell->key();
+    } else {
+        m_secondCell = cell;
+        scell = cell->key();
+    }
+    if (m_firstCell != nullptr && m_secondCell != nullptr && count % 3 == 0) {
+        m_firstCell = cell;
+        m_secondCell = nullptr;
+    }
+
+    if (fcell == scell) {
+        return;
+    } else {
+        closeCells();
+    }
+
+    qDebug()<<m_firstCell;
+if (count % 2 == 0) {
+    qDebug()<<m_secondCell<<"\n";
+}
+count++;
+}
+
 void Field::closeCells()
 {
-
+    m_firstCell->close();
+    m_secondCell->close();
 }
+
+
 
 void Field::applySize()
 {
